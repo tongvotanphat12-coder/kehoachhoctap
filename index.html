@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopHub - Cửa hàng bán hàng trực tuyến</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🛍️ ShopHub</h1>
+                </div>
+                <nav class="nav">
+                    <a href="#home" class="nav-link active" onclick="showHome(event)">Trang chủ</a>
+                    <a href="#cart" class="nav-link" onclick="showCart(event)">
+                        <span>🛒 Giỏ hàng</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Home Page -->
+            <section id="home" class="section active">
+                <div class="hero">
+                    <h2>Chào mừng đến ShopHub</h2>
+                    <p>Khám phá các sản phẩm chất lượng cao với giá tốt nhất</p>
+                </div>
+
+                <div class="products-grid" id="productsGrid">
+                    <!-- Products will be inserted here by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Cart Page -->
+            <section id="cart" class="section">
+                <h2>Giỏ hàng của bạn</h2>
+                
+                <div id="emptyCart" class="empty-cart-message">
+                    <p>🛒 Giỏ hàng trống. <a href="#home" onclick="showHome(event)">Quay lại mua sắm</a></p>
+                </div>
+
+                <div id="cartContent" class="cart-content" style="display: none;">
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng cộng</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartItems">
+                            <!-- Cart items will be inserted here -->
+                        </tbody>
+                    </table>
+
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Tạm tính:</span>
+                            <span id="subtotal">0₫</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span id="shipping">0₫</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Tổng cộng:</span>
+                            <span id="total">0₫</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-actions">
+                        <button class="btn btn-secondary" onclick="showHome(event)">← Tiếp tục mua sắm</button>
+                        <button class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 ShopHub. Tất cả các quyền được bảo lưu.</p>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
